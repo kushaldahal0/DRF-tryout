@@ -1,0 +1,17 @@
+{% extends 'boilerplate.html' %}
+{% block title %}Index{% endblock %}
+{% block header %}Index{% endblock %}
+{% block body %}
+<div class="container">
+  <p>hello world!</p>
+  <div>
+    <h5>This is the list of datas from model</h5>
+    {% if all_models %}
+      {% for data in all_models %}
+        <p> {{ data.id }}. {{ data.name }} of age {{ data.age }} with email {{ data.email }} has phonenumber {{ data.phone }} living in {{ data.address }} entried data at {{ data.created_at }} </p>
+      {% endfor %}
+    {% else %}
+      <p> no any data in all_models </p>
+    {% endif %}
+  </div>
+{% endblock %}
